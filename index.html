@@ -39,6 +39,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', Arial, Helvetica, sans-serif;
             background-color: var(--cp-bg);
@@ -56,30 +60,30 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 45vh;
             display: flex;
             align-items: center;
-            padding: 4rem 0;
+            padding: 2rem 0;
             overflow: hidden;
+            border-bottom: 1px solid rgba(0, 220, 104, 0.1);
         }
 
         .hero::before {
             content: "";
-            background: linear-gradient(rgba(31, 35, 37, 0) 0%, var(--cp-bg) 680px),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%2300dc68"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%2300dc68"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2300dc68"/></svg>') center/100% no-repeat,
+            background: linear-gradient(rgba(31, 35, 37, 0) 0%, var(--cp-bg) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%2300dc68"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%2300dc68"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2300dc68"/></svg>') center/cover no-repeat,
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="%231f2325"/><path d="M0 0L200 200M200 0L0 200" stroke="%2300dc68" stroke-width="1" stroke-opacity="0.05"/></svg>') center/100px repeat;
             width: 100%;
-            height: 750px;
+            height: 100%;
             position: absolute;
             top: 0;
-            background-position: top;
-            box-shadow: inset 0 -20px 1px var(--cp-bg);
+            left: 0;
             z-index: -1;
         }
 
@@ -87,24 +91,24 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            padding-top: 2rem;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 2rem;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(4px);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -1px;
         }
 
@@ -113,23 +117,68 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--cp-text);
-            margin-bottom: 2rem;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
+        /* Pulsating Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--cp-accent);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 0.7;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(8px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.6; }
+        }
+
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 0.5rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-align: center;
+        }
+
+        .btn svg {
+            flex-shrink: 0;
         }
 
         .btn-primary {
@@ -191,22 +240,22 @@
 
         .step-number {
             flex-shrink: 0;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background: var(--cp-accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-right: 1.5rem;
             color: var(--cp-text-black);
         }
 
         .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
         }
 
         .step-content p {
@@ -260,6 +309,8 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .app-card:hover {
@@ -280,8 +331,21 @@
             color: var(--cp-accent);
         }
 
+        /* Special card style */
+        .app-card.explore-more {
+            border: 1px dashed rgba(0, 220, 104, 0.4);
+            background: rgba(0, 220, 104, 0.02);
+        }
+
+        .app-card.explore-more .app-image {
+            background: linear-gradient(135deg, rgba(0, 220, 104, 0.1), rgba(0, 220, 104, 0.05));
+        }
+
         .app-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .app-title {
@@ -299,6 +363,7 @@
         .app-actions {
             display: flex;
             gap: 0.5rem;
+            margin-top: auto;
         }
 
         .app-btn {
@@ -367,16 +432,21 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 3rem 0;
-                min-height: auto;
+                min-height: 50vh;
+                padding: 2.5rem 0;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .hero p {
                 font-size: 1rem;
+            }
+
+            .scroll-indicator {
+                right: 1rem;
+                bottom: 1rem;
             }
 
             .step {
@@ -388,7 +458,7 @@
             }
 
             .btn {
-                display: block;
+                display: flex;
                 width: 100%;
                 margin-bottom: 1rem;
             }
@@ -412,9 +482,19 @@
                 <span class="badge">First Run Setup</span>
                 <h1>You're <span class="accent-text">Almost There</span></h1>
                 <p>Complete the final steps to set up Hollyhock on your ClassPad II and unlock its full potential.</p>
-                <a href="#steps" class="btn btn-primary">Finish Setup</a>
+                <div class="hero-actions">
+                    <a href="#steps" class="btn btn-primary">Finish Setup</a>
+                </div>
             </div>
         </div>
+        
+        <!-- Scroll Indicator -->
+        <a href="#steps" class="scroll-indicator" aria-label="Scroll to content">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
     </section>
 
     <!-- Steps Section -->
@@ -434,8 +514,12 @@
                             <li>Download <strong>run.bin</strong> from the link below</li>
                             <li>The file will be saved as <code>run.bin</code> automatically</li>
                         </ul>
-                        <!-- TODO: change from url referal version -->
-                        <a href="/first-run/apps/run.7002.bin" class="btn btn-primary" download="run.bin">Download run.bin</a>
+                        <a href="/first-run/apps/run.7002.bin" class="btn btn-primary" download="run.bin">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                                <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                            </svg>
+                            Download run.bin
+                        </a>
                     </div>
                 </div>
 
@@ -545,7 +629,6 @@
     </footer>
 
     <script>
-        // TODO: sample apps data, later this would come from a JSON file
         const appsData = [
             {
                 id: 1,
@@ -568,7 +651,7 @@
                 name: "CP Pong",
                 description: "A simple Ping Pong Game for the Casio FX-CP400.",
                 image: "https://raw.githubusercontent.com/PyCSharp/CPPong-For-HHK3/refs/heads/main/image.jpg",
-                downloadUrl: "https://github.com/PyCSharp/CPPong-For-HHK3/releases/tag/cppong-2026-02-17/CPPong.hh3",
+                downloadUrl: "https://github.com/PyCSharp/CPPong-For-HHK3/releases/latest/download/CPPong.hh3",
                 detailsUrl: "https://github.com/PyCSharp/CPPong-For-HHK3"
             },
             {
@@ -594,7 +677,7 @@
                 name: "Hex Editor",
                 description: "A hex editor that can modify values in the RAM of the calculator.",
                 image: "https://raw.githubusercontent.com/PyCSharp/HexEditor-For-HHK3/refs/heads/main/image.png",
-                downloadUrl: "https://github.com/PyCSharp/CPHexEditor-For-HHK3/releases/download/cphexeditor-2025-12-25/CPHexEditor.hh3",
+                downloadUrl: "https://github.com/PyCSharp/CPHexEditor-For-HHK3/releases/latest/download/CPHexEditor.hh3",
                 detailsUrl: "https://github.com/PyCSharp/CPHexEditor-For-HHK3",
                 position: "top"
             },
@@ -628,18 +711,47 @@
                             <h3 class="app-title">${app.name}</h3>
                             <p class="app-description">${app.description}</p>
                             <div class="app-actions">
-                                <a href="${app.downloadUrl}" class="btn btn-primary app-btn" download>Download</a>
+                                <a href="${app.downloadUrl}" class="btn btn-primary app-btn" download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18" fill="currentColor">
+                                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                                    </svg>
+                                    Download
+                                </a>
                                 <a href="${app.detailsUrl}" class="btn btn-secondary app-btn" target="_blank">Details</a>
                             </div>
                         </div>
                     </div>
                 `;
             });
+
+            // Add the "Explore More" card
+            html += `
+                <div class="app-card explore-more">
+                    <div class="app-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
+                    <div class="app-content">
+                        <h3 class="app-title">Explore Python Apps</h3>
+                        <p class="app-description">Download Python to unlock community-made games or write your own custom programs and scripts on your ClassPad.</p>
+                        <div class="app-actions">
+                            <a href="https://classpaddev.github.io/python/store/" class="btn btn-primary app-btn" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18" fill="currentColor">
+                                    <path d="M160-120v-480l320-240 320 240v480H160Zm80-80h480v-360L480-740 240-560v360Zm160-40h160v-160H400v160Z"/>
+                                </svg>
+                                Explore Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
             
             container.innerHTML = html;
         }
 
-        // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             renderApps();
         });
